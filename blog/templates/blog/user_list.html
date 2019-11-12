@@ -1,0 +1,13 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+  <form method="get">
+    {{ filter.form.as_p }}
+    <button type="submit">Search</button>
+  </form>
+  <ul>
+  {% for user in filter.qs %}
+    <li>Blood Group:{{ user.blood }}, Rigion in- {{ user.rigion }} , -Phone No: {{user.phone }}</li>
+  {% endfor %}
+  </ul>
+{% endblock %}
