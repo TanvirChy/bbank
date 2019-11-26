@@ -21,3 +21,19 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('post-detail', kwargs={'pk': self.pk})
+
+class Announcements(models.Model):
+    name = models.CharField(max_length=100)
+    cell = models.IntegerField()
+    b_g  = models.CharField(max_length=15)
+
+    def __str__(self):
+        return self.name
+
+class emergency(models.Model):
+    b_name = models.CharField(max_length=100)
+    cell = models.IntegerField()
+    location = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.b_name

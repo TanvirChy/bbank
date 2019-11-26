@@ -9,9 +9,10 @@ from .views import (
     PostCreateView,
     PostUpdateView,
     PostDeleteView,
-    UserPostListView
+    UserPostListView,
+    emar
 )
-from . import views
+from . import views 
 
 urlpatterns = [
     path('', PostListView.as_view(), name='blog-home'),
@@ -21,6 +22,8 @@ urlpatterns = [
     path('post/<int:pk>/update/', PostUpdateView.as_view(), name='post-update'),
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
     path('about/', views.about, name='blog-about'),
+    path('announcements/', views.announ, name='announce-ments'),
+    path('emergency/', emar , name='emer-gency'),
     url(r'^search/$', FilterView.as_view(filterset_class=UserFilter,
         template_name='blog/user_list.html'), name='search'),
 ]

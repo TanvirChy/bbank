@@ -1,0 +1,14 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+	<h2>Emergency contact with Blood Bank</h2>
+
+	{% for emergenc in emergency %}
+		<div >
+			<ul>
+				<li class="article-content">Name : {{ emergenc.b_name }} , Phone: {{ emergenc.cell }} , Location: {{ emergenc.location }}</li>
+			</ul>
+		</div>
+	{% endfor %}
+
+{% endblock content %}

@@ -8,7 +8,7 @@ from django.views.generic import (
     UpdateView,
     DeleteView
 )
-from .models import Post
+from .models import Post,Announcements,emergency
 from django.contrib.auth.models import User
 from django.shortcuts import render
 from .filters import UserFilter
@@ -26,12 +26,13 @@ def home(request):
     return render(request, 'blog/home.html', context)
 
 
+
 class PostListView(ListView):
     model = Post
     template_name = 'blog/home.html'  # <app>/<model>_<viewtype>.html
     context_object_name = 'posts'
     ordering = ['-date_posted']
-    paginate_by = 4
+    paginate_by = 3
 
 class UserPostListView(ListView):
     model = Post
@@ -85,3 +86,14 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 def about(request):
     return render(request, 'blog/about.html', {'title': 'About'})
+
+def announ(request):
+    context = {
+        'Announcement': Announcements.objects.all()
+    }
+    return render(request, 'blog/announcements.html', context )
+def emar(request):
+    context = {
+        'emergency': emergency.objects.all()
+    }
+    return render(request, 'blog/emergency.html', context)

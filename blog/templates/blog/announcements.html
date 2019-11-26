@@ -1,0 +1,32 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+	<h2>Accident heppend in Cumilla</h2>
+	<p>
+		Turna Nishita crashes into Udayan Express; over 70 injured; death toll may rise; rail links restored after nearly eight hours; three railway staffs suspended; five probe bodies formed
+	</p>
+	<p>
+		
+
+		Turna Nishita crashes into Udayan Express; over 70 injured; death toll may rise; rail links restored after nearly eight hours; three railway staffs suspended; five probe bodies formed
+
+	</p>
+	<p>
+
+		In the worst railway disaster over the past decade, 16 people including five children were killed in a collision between two intercity trains in Kasba upazila of Brahmanbaria early Tuesday.
+
+	<p>
+		Dhaka-bound Turna Nishita, coming from Chittagong, crashed into Chittagong-bound Udayan Express, coming from Sylhet, near Mondobagh Railway Station around 2:45am, according to railway and district administration officials.
+
+		The crash threw at least four bogies of Udayan Express off the tracks and left them in a mangled state, leading to the casualties. At least 200ft stretch of railway tracks was also damaged.
+	</p>
+	<h1>Contact With them for blood</h1>
+	{% for Announcemen in Announcement %}
+		<div >
+			<ul>
+				<li class="article-content">Name : {{ Announcemen.name }} , Phone: {{ Announcemen.cell }} , Blood: {{ Announcemen.b_g }}</li>
+			</ul>
+		</div>
+	{% endfor %}
+
+{% endblock content %}
